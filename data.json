@@ -1,0 +1,12 @@
+{
+    "tweets": [
+        {
+            "text": "This is image #1",
+            "url": "https://history.library.gatech.edu/files/original/8da0b7a926427a61f99a5aa5ec79f779.jpg"
+        },
+        {
+            "text": "This is image #2",
+            "url": "https://history.library.gatech.edu/files/original/648d00ce1ccc12b7e6ef3cfc9dfed209.jpg"
+        }
+    ]
+}
