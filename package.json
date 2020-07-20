@@ -1,0 +1,9 @@
+{
+  "name": "gtlibrary-retrotech-twitterbot",
+  "version": "1.0.0",
+  "description": "TwitterBot for Georgia Tech Library's retroTECH lab that uploads photos from collection daily ",
+  "main": "index.js",
+  "repository": "https://github.com/PoorBillyPilgrim/gtlibrary-retrotech-twitterbot.git",
+  "author": "Tyler Jones <tjjones93@gmail.com>",
+  "license": "MIT"
+}
