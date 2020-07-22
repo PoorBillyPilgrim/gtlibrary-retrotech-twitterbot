@@ -1,9 +1,7 @@
 require('dotenv').config();
-const axios = require('axios');
 const fs = require('fs');
 const Twit = require('twit');
-const { delayReject, delayThen, delayCatch } = require('delay.ts');
-
+const request = require('request');
 const data = require('./data.json');
 
 /** App originally could not connect with history.library.gatech.edu 
@@ -16,7 +14,6 @@ const rootCas = require('ssl-root-cas/latest').create();
 rootCas
     .addFile(__dirname + '/ssl/intermediate-01.pem')
     .addFile(__dirname + '/ssl/intermediate-02.pem');
-
 require('https').globalAgent.options.ca = rootCas;
 
 
@@ -28,81 +25,55 @@ const T = new Twit({
     access_token_secret: process.env.ACCESS_TOKEN_SECRET
 });
 
-T.post('statuses/update', { status: 'Look, I am tweeting again!' }, function (err, data, response) {
-    console.log(data)
-});
-
-
-
-
-const delay = () => {
-    return new Promise(resolve => {
-        setTimeout(resolve, 3000);
-    });
-}
-
-// Grabbed this func from https://futurestud.io/tutorials/download-files-images-with-axios-in-node-js
-async function downloadImage(url, imgPath) {
-
-    const writeStream = fs.createWriteStream(imgPath)
-
-    const response = await axios({
-        url,
-        method: 'GET',
-        responseType: 'stream'
-    })
-
-    // How axios writes image to pathToImg
-    response.data.pipe(writeStream)
-
-    return new Promise((resolve, reject) => {
-        writeStream.on('finish', resolve);
-        writeStream.on('error', reject)
-        console.log('image downloaded!')
-    })
-}
-
-const url = 'https://history.library.gatech.edu/files/original/8da0b7a926427a61f99a5aa5ec79f779.jpg'
 const imgPath = './images/image.png'
+const url = 'https://history.library.gatech.edu/files/original/8da0b7a926427a61f99a5aa5ec79f779.jpg'
 
-// Need to create an async delete func
-function deleteImage(img, text) {
-    return new Promise((resolve, reject) => {
-        fs.unlink(img, (err) => {
-            if (err) {
-                reject(err)
-            }
-            resolve(`${text}, and it has been deleted!`)
+
+const download = (url, path, callback) => {
+    console.log('downloading image')
+    request.head(url, () => {
+        // I think it is so that you can log errors if wanted
+        request(url)
+            .pipe(fs.createWriteStream(path))
+            .on('close', callback)
+    })
+}
+
+const postTweet = (img, callback) => {
+    fs.readFile(img, { encoding: 'base64' }, (err, b64content) => {
+        console.log('uploading image');
+        T.post('media/upload', { media_data: b64content }, (err, data, response) => {
+            T.post('statuses/update', { media_ids: new Array(data.media_id_string) }, (err, data, response) => {
+                if (err) {
+                    console.error(err)
+                }
+                console.log(data);
+                if (callback) {
+                    callback(err);
+                }
+            })
         });
     })
 }
-/*
-for (let i = 0; i < data.tweets.length; i++) {
-    downloadImage(data.tweets[i].url, imgPath).then(() =>
-        fs.unlink(imgPath, (err) => {
-            if (err) {
-                console.error(err);
-            }
-            console.log(`${data.tweets[i].text}, and it has been deleted!`)
-        })
-    ).catch(err => console.error(err));
-}
-downloadImage(data.tweets[0].url, imgPath)
-    .then(deleteImage(imgPath, data.tweets[0].text))
-    .catch(err => console.error(err))
-    */
 
-/*
-for (let i = 0; i < data.tweets.length; i++) {
-    // Using this chain has successfully showed that the image does download,
-    // and then it is deleted 3 seconds later
-    downloadImage(data.tweets[i].img, img).then(delayThen(3000)).then(() =>
-        fs.unlink(img, (err) => {
-            if (err) {
-                console.error(err);
-            }
-            console.log(`${data.tweets[i].text}, and it has been deleted!`)
-        })
-    ).catch(err => console.error(err));
+
+function deleteImage(img, text, callback) {
+    fs.unlink(img, (err) => {
+        if (err) {
+            console.error(err)
+        }
+        console.log(`${text}, and it has been deleted!`)
+    });
 }
-*/
+
+// Successfully downloads image from url
+// Then uploads to Twitter
+// Then deletes from local file system 
+download(url, imgPath, () => {
+    postTweet(imgPath, (err) => {
+        if (!err) {
+            deleteImage(imgPath, 'this is photo 1')
+        }
+    })
+})
+
