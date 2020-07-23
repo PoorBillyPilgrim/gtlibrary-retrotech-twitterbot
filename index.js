@@ -3,7 +3,7 @@ const fs = require('fs');
 const Twit = require('twit');
 const request = require('request');
 const data = require('./data.json');
-const cron = require('node-cron')
+const CronJob = require('cron').CronJob;
 
 /** Intermediate certificates for smartech.library.gatech.edu
  *  They were not bundled in the certificate chain,
@@ -26,6 +26,21 @@ const T = new Twit({
 });
 
 const imgPath = './images/image.png'
+
+// In progress 
+/** 
+ * const getURL = (fileName, callback) => {
+    fs.readFile('data.json', (err, data) => {
+        let arr = JSON.parse(data);
+        let url = arr.tweets[0].url;
+        if (err) {
+            console.error(err)
+        }
+        callback(url);
+    })
+}
+ */
+
 
 // Download image from url
 const downloadImage = (url, path, callback) => {
@@ -79,31 +94,24 @@ const editJsonFile = (fileName, callback) => {
 }
 
 
-downloadImage(data.tweets[0].url, imgPath, () => {
-    postTweet(imgPath, (err) => {
-        if (err) {
-            console.error(err);
-        }
-        deleteImage(imgPath, data.tweets[0].text);
-        editJsonFile('data.json');
-    })
-})
+// Testing: successfully tweets every 15 seconds
+const job = new CronJob('*/15 * * * * *', () => {
 
-// In progress: schedule Twitter uploads using cron-node module
-// const task = cron.schedule('*/30 * * * *', () => {
-/*
-
-    const url = data.tweets[0].url
-    const text = data.tweets[0].text
-
-    download(url, imgPath, () => {
-        postTweet(imgPath, (err) => {
-            if (!err) {
-                deleteImage(imgPath, text)
-            }
+    fs.readFile('data.json', (err, data) => {
+        let arr = JSON.parse(data);
+        let url = JSON.stringify(arr.tweets[0].url);
+        // JSON.stringify() wraps the already quoted string in more quotes
+        // slice(1, -1) removes the extra quotes
+        downloadImage(url.slice(1, -1), imgPath, () => {
+            postTweet(imgPath, (err) => {
+                if (err) {
+                    console.error(err);
+                }
+                deleteImage(imgPath, arr.tweets[0].text);
+                editJsonFile('data.json');
+            })
         })
     })
 })
 
-task.start();
-*/
+job.start();
