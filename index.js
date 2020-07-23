@@ -3,6 +3,7 @@ const fs = require('fs');
 const Twit = require('twit');
 const request = require('request');
 const data = require('./data.json');
+const cron = require('node-cron')
 
 /** App originally could not connect with history.library.gatech.edu 
  *  because intermediate certificates were not bundled in the certificate chain
@@ -17,7 +18,7 @@ rootCas
 require('https').globalAgent.options.ca = rootCas;
 
 
-
+// Twitter API credentials
 const T = new Twit({
     consumer_key: process.env.API_KEY,
     consumer_secret: process.env.API_SECRET_KEY,
@@ -26,19 +27,18 @@ const T = new Twit({
 });
 
 const imgPath = './images/image.png'
-const url = 'https://history.library.gatech.edu/files/original/8da0b7a926427a61f99a5aa5ec79f779.jpg'
 
-
+// Download image from url
 const download = (url, path, callback) => {
     console.log('downloading image')
     request.head(url, () => {
-        // I think it is so that you can log errors if wanted
         request(url)
             .pipe(fs.createWriteStream(path))
             .on('close', callback)
     })
 }
 
+// Read ./images/image.png and upload to Twitter
 const postTweet = (img, callback) => {
     fs.readFile(img, { encoding: 'base64' }, (err, b64content) => {
         console.log('uploading image');
@@ -56,7 +56,7 @@ const postTweet = (img, callback) => {
     })
 }
 
-
+// Delete ./images/image after upload
 function deleteImage(img, text, callback) {
     fs.unlink(img, (err) => {
         if (err) {
@@ -66,14 +66,45 @@ function deleteImage(img, text, callback) {
     });
 }
 
-// Successfully downloads image from url
-// Then uploads to Twitter
-// Then deletes from local file system 
-download(url, imgPath, () => {
+// Read data.json file, deletes the first entry, and saves the new file
+const editJsonFile = (fileName, callback) => {
+    fs.readFile('data.json', (err, data) => {
+        console.log('file has been read')
+        const arr = JSON.parse(data);
+        arr.tweets.shift();
+        fs.writeFile('data.json', JSON.stringify(arr), 'utf-8', (err) => {
+            if (err) throw err;
+            console.log('file saved!')
+        });
+    });
+}
+
+
+download(data.tweets[0].url, imgPath, () => {
     postTweet(imgPath, (err) => {
-        if (!err) {
-            deleteImage(imgPath, 'this is photo 1')
+        if (err) {
+            console.error(err);
         }
+        deleteImage(imgPath, data.tweets[0].text);
+        editJsonFile('data.json');
     })
 })
 
+// In progress: schedule Twitter uploads using cron-node module
+// const task = cron.schedule('*/30 * * * *', () => {
+/*
+
+    const url = data.tweets[0].url
+    const text = data.tweets[0].text
+
+    download(url, imgPath, () => {
+        postTweet(imgPath, (err) => {
+            if (!err) {
+                deleteImage(imgPath, text)
+            }
+        })
+    })
+})
+
+task.start();
+*/
