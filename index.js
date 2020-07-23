@@ -5,10 +5,9 @@ const request = require('request');
 const data = require('./data.json');
 const cron = require('node-cron')
 
-/** App originally could not connect with history.library.gatech.edu 
- *  because intermediate certificates were not bundled in the certificate chain
- *  I had to go download the certs
- *  I then bundled them manually by using the ssl-root-cas module
+/** Intermediate certificates for smartech.library.gatech.edu
+ *  They were not bundled in the certificate chain,
+ *  so I downloaded them and manually bundled them using the ssl-root-cas module
  *  Docs: https://www.npmjs.com/package/ssl-root-cas
  */
 const rootCas = require('ssl-root-cas/latest').create();
