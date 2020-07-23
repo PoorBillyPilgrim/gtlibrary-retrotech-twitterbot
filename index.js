@@ -29,7 +29,7 @@ const T = new Twit({
 const imgPath = './images/image.png'
 
 // Download image from url
-const download = (url, path, callback) => {
+const downloadImage = (url, path, callback) => {
     console.log('downloading image')
     request.head(url, () => {
         request(url)
@@ -80,7 +80,7 @@ const editJsonFile = (fileName, callback) => {
 }
 
 
-download(data.tweets[0].url, imgPath, () => {
+downloadImage(data.tweets[0].url, imgPath, () => {
     postTweet(imgPath, (err) => {
         if (err) {
             console.error(err);
