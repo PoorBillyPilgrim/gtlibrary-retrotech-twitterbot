@@ -28,8 +28,8 @@ const T = new Twit({
 const imgPath = './images/image.png'
 
 // In progress 
-/** 
- * const getURL = (fileName, callback) => {
+/*
+const getURL = (fileName, callback) => {
     fs.readFile('data.json', (err, data) => {
         let arr = JSON.parse(data);
         let url = arr.tweets[0].url;
@@ -39,7 +39,7 @@ const imgPath = './images/image.png'
         callback(url);
     })
 }
- */
+*/
 
 
 // Download image from url
@@ -56,17 +56,28 @@ const downloadImage = (url, path, callback) => {
 const postTweet = (img, callback) => {
     fs.readFile(img, { encoding: 'base64' }, (err, b64content) => {
         console.log('uploading image');
-        T.post('media/upload', { media_data: b64content }, (err, data, response) => {
-            T.post('statuses/update', { media_ids: new Array(data.media_id_string) }, (err, data, response) => {
-                if (err) {
-                    console.error(err)
-                }
-                console.log(data);
-                if (callback) {
-                    callback(err);
-                }
-            })
-        });
+        T.post('media/upload', { media_data: b64content }, (err, img, response) => {
+            if (!err) {
+                fs.readFile('data.json', (err, data) => {
+                    let arr = JSON.parse(data);
+                    let text = JSON.stringify(arr.tweets[0].text);
+                    let url = JSON.stringify(arr.tweets[0].url)
+                    // The second parameter is an object that identifies the values to be tweeted
+                    // media_id == image
+                    // status == text of status update
+                    T.post('statuses/update', { status: `Check out ${text.slice(1, -1)} at ${url.slice(1, -1)}`, media_ids: new Array(img.media_id_string) }, (err, data, response) => {
+
+                        if (err) {
+                            console.error(err)
+                        }
+                        console.log(data);
+                        if (callback) {
+                            callback(err);
+                        }
+                    })
+                })
+            }
+        })
     })
 }
 
@@ -82,11 +93,11 @@ function deleteImage(img, text, callback) {
 
 // Read data.json file, deletes the first entry, and saves the new file
 const editJsonFile = (fileName, callback) => {
-    fs.readFile('data.json', (err, data) => {
+    fs.readFile(fileName, 'utf-8', (err, data) => {
         console.log('file has been read')
         const arr = JSON.parse(data);
         arr.tweets.shift();
-        fs.writeFile('data.json', JSON.stringify(arr), 'utf-8', (err) => {
+        fs.writeFile(fileName, JSON.stringify(arr), (err) => {
             if (err) throw err;
             console.log('file saved!')
         });
@@ -94,9 +105,8 @@ const editJsonFile = (fileName, callback) => {
 }
 
 
-// Testing: successfully tweets every 15 seconds
-const job = new CronJob('*/15 * * * * *', () => {
-
+// Testing: successfully tweets every 5 seconds
+const job = new CronJob('*/5 * * * * *', () => {
     fs.readFile('data.json', (err, data) => {
         let arr = JSON.parse(data);
         let url = JSON.stringify(arr.tweets[0].url);
@@ -115,3 +125,4 @@ const job = new CronJob('*/15 * * * * *', () => {
 })
 
 job.start();
+
