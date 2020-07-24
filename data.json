@@ -1,1 +1,12 @@
-{"tweets":[]}
+{
+    "tweets": [
+        {
+            "text": "image #1",
+            "url": "https://smartech.gatech.edu/bitstream/handle/1853/62110/Lance-Fortnow-oral-history-20181107-screenshot.jpeg?sequence=6&isAllowed=y"
+        },
+        {
+            "text": "image #2",
+            "url": "https://smartech.gatech.edu/bitstream/handle/1853/62111/Ribbit-screenshot-2.png?sequence=5&isAllowed=y"
+        }
+    ]
+}
