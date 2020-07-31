@@ -4,6 +4,10 @@ const Twit = require('twit');
 const request = require('request');
 const data = require('./data.json');
 const CronJob = require('cron').CronJob;
+const express = require('express');
+
+const app = express();
+const port = process.env.PORT;
 
 /** Intermediate certificates for smartech.library.gatech.edu
  *  They were not bundled in the certificate chain,
@@ -93,23 +97,27 @@ const editJsonFile = (fileName, callback) => {
     });
 }
 
+app.listen(port, () => {
 
-// Testing: successfully tweets every 5 seconds
-const job = new CronJob('*/5 * * * * *', () => {
-    fs.readFile('data.json', (err, data) => {
-        handleError(err);
-        let arr = JSON.parse(data),
-            url = JSON.stringify(arr.tweets[0].url);
-        // JSON.stringify() wraps the already quoted string in more quotes
-        // slice(1, -1) removes the extra quotes
-        downloadImage(url.slice(1, -1), imgPath, () => {
-            postTweet(imgPath, (err) => {
-                deleteImage(imgPath, arr.tweets[0].text);
-                editJsonFile('data.json');
+    // Testing: successfully tweets every 5 seconds
+    const job = new CronJob('*/5 * * * * *', () => {
+        fs.readFile('data.json', (err, data) => {
+            handleError(err);
+            let arr = JSON.parse(data),
+                url = JSON.stringify(arr.tweets[0].url);
+            // JSON.stringify() wraps the already quoted string in more quotes
+            // slice(1, -1) removes the extra quotes
+            downloadImage(url.slice(1, -1), imgPath, () => {
+                postTweet(imgPath, (err) => {
+                    deleteImage(imgPath, arr.tweets[0].text);
+                    editJsonFile('data.json');
+                })
             })
         })
     })
+
+    job.start();
+
 })
 
-job.start();
 
