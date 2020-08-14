@@ -10,7 +10,7 @@ const app = express();
 const port = process.env.PORT;
 
 /** Intermediate certificates for smartech.library.gatech.edu
- *  They were not bundled in the certificate chain,
+ *  were not bundled in the certificate chain,
  *  so I downloaded them and manually bundled them using the ssl-root-cas module
  *  Docs: https://www.npmjs.com/package/ssl-root-cas
  */
@@ -58,12 +58,16 @@ const postTweet = (img, callback) => {
                 fs.readFile('data.json', (err, data) => {
                     handleError(err);
                     let arr = JSON.parse(data),
-                        text = JSON.stringify(arr.tweets[0].text),
-                        url = JSON.stringify(arr.tweets[0].url);
+                        gameTitle = JSON.stringify(arr.tweets[0].gameTitle),
+                        releaseDate = JSON.stringify(arr.tweets[0].releaseDate),
+                        internetArchiveUrl = JSON.stringify(arr.tweets[0].internetArchiveUrl);
                     // The second parameter is an object that identifies the values to be tweeted
                     // media_id == image
                     // status == text of status update
-                    T.post('statuses/update', { status: `Check out ${text.slice(1, -1)} at ${url.slice(1, -1)}`, media_ids: new Array(img.media_id_string) }, (err, data, response) => {
+                    T.post('statuses/update', {
+                        status: `${gameTitle.slice(1, -1)} was released in ${releaseDate.slice(1, -1)}. Wanna play? Check it out at the Internet Archive's Console Living Room: ${internetArchiveUrl.slice(1, -1)}.`,
+                        media_ids: new Array(img.media_id_string)
+                    }, (err, data, response) => {
                         handleError(err);
                         console.log(data);
                         if (callback) {
@@ -99,12 +103,12 @@ const editJsonFile = (fileName, callback) => {
 
 app.listen(port, () => {
 
-    // Testing: successfully tweets every 5 seconds
-    const job = new CronJob('*/5 * * * * *', () => {
+    // Testing: successfully tweets every 30 seconds
+    const job = new CronJob('*/30 * * * * *', () => {
         fs.readFile('data.json', (err, data) => {
             handleError(err);
             let arr = JSON.parse(data),
-                url = JSON.stringify(arr.tweets[0].url);
+                url = JSON.stringify(arr.tweets[0].smartechUrl);
             // JSON.stringify() wraps the already quoted string in more quotes
             // slice(1, -1) removes the extra quotes
             downloadImage(url.slice(1, -1), imgPath, () => {
