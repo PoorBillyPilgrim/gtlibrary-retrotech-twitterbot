@@ -60,12 +60,13 @@ const postTweet = (img, callback) => {
                     let arr = JSON.parse(data),
                         gameTitle = JSON.stringify(arr.tweets[0].gameTitle),
                         releaseDate = JSON.stringify(arr.tweets[0].releaseDate),
+                        gameSystem = JSON.stringify(arr.tweets[0].gameSystem),
                         internetArchiveUrl = JSON.stringify(arr.tweets[0].internetArchiveUrl);
                     // The second parameter is an object that identifies the values to be tweeted
                     // media_id == image
                     // status == text of status update
                     T.post('statuses/update', {
-                        status: `${gameTitle.slice(1, -1)} was released in ${releaseDate.slice(1, -1)}. Wanna play? Check it out at the Internet Archive's Console Living Room: ${internetArchiveUrl.slice(1, -1)}.`,
+                        status: `${gameTitle.slice(1, -1)} was released in ${releaseDate.slice(1, -1)} for the ${gameSystem.slice(1, -1)} and can be found in the Georiga Tech Library's retroTECH collection. Play it online at the Internet Archive's Console Living Room: ${internetArchiveUrl.slice(1, -1)}.`,
                         media_ids: new Array(img.media_id_string)
                     }, (err, data, response) => {
                         handleError(err);
