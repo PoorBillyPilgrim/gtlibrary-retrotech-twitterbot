@@ -67,7 +67,8 @@ const postTweet = (img, callback) => {
                     // status == text of status update
                     T.post('statuses/update', {
                         status: `${gameTitle.slice(1, -1)} was released in ${releaseDate.slice(1, -1)} for the ${gameSystem.slice(1, -1)} and can be found in the Georiga Tech Library's retroTECH collection. Play it online at the Internet Archive's Console Living Room: ${internetArchiveUrl.slice(1, -1)}.`,
-                        media_ids: new Array(img.media_id_string)
+                        media_ids: new Array(img.media_id_string),
+                        alt_text: { text: `${gameTitle} for ${gameSystem}` }
                     }, (err, data, response) => {
                         handleError(err);
                         console.log(data);
@@ -85,7 +86,7 @@ const postTweet = (img, callback) => {
 const deleteImage = (img, text, callback) => {
     fs.unlink(img, (err) => {
         handleError(err);
-        console.log(`${text}, and it has been deleted!`)
+        console.log(`image has been deleted!`);
     });
 }
 
