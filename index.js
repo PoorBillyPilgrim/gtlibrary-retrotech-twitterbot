@@ -105,8 +105,8 @@ const editJsonFile = (fileName, callback) => {
 
 app.listen(port, () => {
 
-    // Testing: successfully tweets every 30 seconds
-    const job = new CronJob('*/30 * * * * *', () => {
+    // Scheduled to tweet every Wednesday at 9am ET
+    const job = new CronJob('* 9 * * Wed', () => {
         fs.readFile('data.json', (err, data) => {
             handleError(err);
             let arr = JSON.parse(data),
