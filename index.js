@@ -51,7 +51,7 @@ const downloadImage = (url, path, callback) => {
 const postTweet = (img, callback) => {
     fs.readFile(img, { encoding: 'base64' }, (err, b64content) => {
         handleError(err);
-        console.log('uploading image');
+        console.log('uploading image to Twitter');
         T.post('media/upload', { media_data: b64content }, (err, img, response) => {
             handleError(err);
             if (!err) {
@@ -86,7 +86,7 @@ const postTweet = (img, callback) => {
 const deleteImage = (img, text, callback) => {
     fs.unlink(img, (err) => {
         handleError(err);
-        console.log(`image has been deleted!`);
+        console.log(`image deleted`);
     });
 }
 
@@ -98,7 +98,7 @@ const editJsonFile = (fileName, callback) => {
         arr.tweets.shift();
         fs.writeFile(fileName, JSON.stringify(arr), (err) => {
             handleError(err);
-            console.log('file saved!')
+            console.log('file saved')
         });
     });
 }
