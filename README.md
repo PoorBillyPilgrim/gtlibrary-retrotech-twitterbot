@@ -10,7 +10,7 @@ The bot bases its tweets off the data provided by `data.json`:
 5. The bot then waits a specified amount of time before tweeting again using [node-cron](https://www.npmjs.com/package/node-cron).
 
 ## Credits
-[An excellent article](https://journal.code4lib.org/articles/15112#note11) found in [Issue 48](https://journal.code4lib.org/issues/issues/issue48) of code4lib by Meredith Hale of the University of Tennessee spurred me to create a Twitter Bot.
+[An excellent article](https://journal.code4lib.org/articles/15112#note11) found in [code4lib Issue 48](https://journal.code4lib.org/issues/issues/issue48) by Meredith Hale of the University of Tennessee spurred me to create a Twitter Bot.
 
 Scott Carlson's [Python Twitter Bot](https://www.scottcarlson.info/you-should-make-a-twitter-bot/) was an immense help.
 
