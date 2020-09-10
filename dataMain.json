@@ -1,18 +1,67 @@
 {
     "tweets": [
         {
-            "gameTitle": "Choplifter",
-            "releaseDate": "1985",
+            "gameTitle": "World Grand Prix",
+            "releaseDate": "1986",
             "gameSystem": "Sega Master System",
-            "internetArchiveUrl": "https://archive.org/details/segasms_Choplifter_1985_Sega",
-            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63094/50671014229154.jpg?sequence=1&isAllowed=y"
+            "internetArchiveUrl": "https://archive.org/details/segasms_World_Grand_Prix_1986_Sega",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63093/50671014229139.jpg?sequence=1&isAllowed=y"
         },
         {
-            "gameTitle": "Fantasy Zone: The Maze",
-            "releaseDate": "1987",
+            "gameTitle": "Starmaster",
+            "releaseDate": "1982",
+            "gameSystem": "Atari 2600",
+            "internetArchiveUrl": "https://archive.org/details/atari_2600_starmaster_1982_activision_alan_miller_ax-016",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63354/50671014235524.jpg?sequence=1&isAllowed=y"
+        },
+        {
+            "gameTitle": "Adventure",
+            "releaseDate": "1980",
+            "gameSystem": "Atari 2600",
+            "internetArchiveUrl": "https://archive.org/details/atari_2600_adventure",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63295/50671014228008.JPG?sequence=1&isAllowed=y"
+        },
+        {
+            "gameTitle": "Commando Raid",
+            "releaseDate": "1982",
+            "gameSystem": "Atari 2600",
+            "internetArchiveUrl": "https://archive.org/details/atari_2600_commando_raid_1982_u.s._games_corporation_wes_trager_henry_will_iv_vc1",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63248/50671014235888.JPG?sequence=1&isAllowed=y"
+        },
+        {
+            "gameTitle": "Barnstorming",
+            "releaseDate": "1982",
+            "gameSystem": "Atari 2600",
+            "internetArchiveUrl": "https://archive.org/details/atari_2600_barnstorming",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63294/50671014227992.jpg?sequence=1&isAllowed=y"
+        },
+        {
+            "gameTitle": "Teddy Boy",
+            "releaseDate": "1986",
             "gameSystem": "Sega Master System",
-            "internetArchiveUrl": "https://archive.org/details/segasms_Fantasy_Zone_-_The_Maze_1987_Sega",
-            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63033/50671014229204.jpg?sequence=1&isAllowed=y"
+            "internetArchiveUrl": "https://archive.org/details/segasms_Teddy_Boy_Blues_1985_Sega_JP_en",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63041/50671014229063.jpg?sequence=1&isAllowed=y"
+        },
+        {
+            "gameTitle": "Tapper",
+            "releaseDate": "1984",
+            "gameSystem": "Atari 2600",
+            "internetArchiveUrl": "https://archive.org/details/atari_2600_tapper_1984_sega_-_bally_midway_-_beck-tech_010-01",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63269/50671014236076.JPG?sequence=1&isAllowed=y"
+        },
+        {
+            "gameTitle": "Venture",
+            "releaseDate": "1982",
+            "gameSystem": "Atari 2600",
+            "internetArchiveUrl": "https://archive.org/details/atari_2600_venture_1987_atari_cx26145",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63357/50671014235557.jpg?sequence=1&isAllowed=y"
+        },
+        {
+            "gameTitle": "Chopper Command",
+            "releaseDate": "1982",
+            "gameSystem": "Atari 2600",
+            "internetArchiveUrl": "https://archive.org/details/atari_2600_chopper_command_1982_activision_bob_whitehead_ax-015_ax-015-04",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63274/50671014236126.jpg?sequence=1&isAllowed=y"
         },
         {
             "gameTitle": "Hang On & Safari Hunt",
@@ -22,11 +71,60 @@
             "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63036/50671014229253.jpg?sequence=1&isAllowed=y"
         },
         {
-            "gameTitle": "Great Baseball",
-            "releaseDate": "1987",
-            "gameSystem": "Sega Master System",
-            "internetArchiveUrl": "https://archive.org/details/segasms_Great_Baseball_1987_Sega",
-            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63034/50671014229238.jpg?sequence=1&isAllowed=y"
+            "gameTitle": "Star Wars Jedi Arena",
+            "releaseDate": "1983",
+            "gameSystem": "Atari 2600",
+            "internetArchiveUrl": "https://archive.org/details/atari_2600_star_wars_-_jedi_arena_paddle_1983_parker_brothers_rex_bradford_pb5000",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63305/50671014228099.JPG?sequence=1&isAllowed=y"
+        },
+        {
+            "gameTitle": "M*A*S*H",
+            "releaseDate": "1982",
+            "gameSystem": "Atari 2600",
+            "internetArchiveUrl": "https://archive.org/details/atari_2600_m.a.s.h_1983_20th_century_fox_video_games_frank_cohen_douglas_dallas_n",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63245/50671014235854.jpg?sequence=1&isAllowed=y"
+        },
+        {
+            "gameTitle": "Seaquest",
+            "releaseDate": "1983",
+            "gameSystem": "Atari 2600",
+            "internetArchiveUrl": "https://archive.org/details/atari_2600_seaquest_1983_activision_steve_cartwright_ax-022",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63308/50671014228123.JPG?sequence=1&isAllowed=y"
+        },
+        {
+            "gameTitle": "Casino",
+            "releaseDate": "1978",
+            "gameSystem": "Atari 2600",
+            "internetArchiveUrl": "https://archive.org/details/atari_2600_casino_-_poker_plus_paddle_1979_atari_bob_whitehead_-_sears_cx2652_-_6",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63286/50671014227943.JPG?sequence=1&isAllowed=y"
+        },
+        {
+            "gameTitle": "Fast Food",
+            "releaseDate": "1982",
+            "gameSystem": "Atari 2600",
+            "internetArchiveUrl": "https://archive.org/details/atari_2600_fast_food_1982_telesys_don_donyo_ruffcorn_jack_woodman_1003",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63349/50671014233289.jpg?sequence=1&isAllowed=y"
+        },
+        {
+            "gameTitle": "Tapeworm",
+            "releaseDate": "1982",
+            "gameSystem": "Atari 2600",
+            "internetArchiveUrl": "https://archive.org/details/atari_2600_tapeworm_1982_spectravision_spectravideo_sa-204",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63278/50671014236159.JPG?sequence=1&isAllowed=y"
+        },
+        {
+            "gameTitle": "River Raid",
+            "releaseDate": "1982",
+            "gameSystem": "Atari 2600",
+            "internetArchiveUrl": "https://archive.org/details/atari_2600_river_raid_1982_activision_carol_shaw_ax-020_ax-020-04",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63293/50671014128877.JPG?sequence=1&isAllowed=y"
+        },
+        {
+            "gameTitle": "Robot Tank",
+            "releaseDate": "1983",
+            "gameSystem": "Atari 2600",
+            "internetArchiveUrl": "https://archive.org/details/atari_2600_robot_tank_robotank_1983_activision_alan_miller_az-028_ag-028-04",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63355/50671014235532.jpg?sequence=1&isAllowed=y"
         },
         {
             "gameTitle": "Marksman Shooting & Trap Shooting",
@@ -36,18 +134,11 @@
             "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63039/50671014229089.jpg?sequence=1&isAllowed=y"
         },
         {
-            "gameTitle": "Maze Hunter 3-D",
-            "releaseDate": "1987",
+            "gameTitle": "Choplifter",
+            "releaseDate": "1985",
             "gameSystem": "Sega Master System",
-            "internetArchiveUrl": "https://archive.org/details/segasms_Maze_Hunter_3D_1987_Sega",
-            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63078/50671014229105.jpg?sequence=1&isAllowed=y"
-        },
-        {
-            "gameTitle": "Out Run",
-            "releaseDate": "1987",
-            "gameSystem": "Sega Master System",
-            "internetArchiveUrl": "https://archive.org/details/segasms_Out_Run_1987_Sega",
-            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63037/50671014229121.jpg?sequence=1&isAllowed=y"
+            "internetArchiveUrl": "https://archive.org/details/segasms_Choplifter_1985_Sega",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63094/50671014229154.jpg?sequence=1&isAllowed=y"
         },
         {
             "gameTitle": "Phantasy Star",
@@ -57,11 +148,67 @@
             "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63095/50671014229162.jpg?sequence=1&isAllowed=y"
         },
         {
-            "gameTitle": "World Grand Prix",
+            "gameTitle": "Sega Sports Pad",
             "releaseDate": "1986",
             "gameSystem": "Sega Master System",
-            "internetArchiveUrl": "https://archive.org/details/segasms_World_Grand_Prix_1986_Sega",
-            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63093/50671014229139.jpg?sequence=1&isAllowed=y"
+            "internetArchiveUrl": "https://archive.org/details/segasms_Sports_Pad_Soccer_1987_Sega_JP_en",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63074/50671014229188.jpg?sequence=1&isAllowed=y"
+        },
+        {
+            "gameTitle": "Grand Prix",
+            "releaseDate": "1982",
+            "gameSystem": "Atari 2600",
+            "internetArchiveUrl": "https://archive.org/details/atari_2600_grand_prix_robby",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63343/50671014228453.JPG?sequence=1&isAllowed=y"
+        },
+        {
+            "gameTitle": "F-16 Fighting Falcon",
+            "releaseDate": "1986",
+            "gameSystem": "Sega Master System",
+            "internetArchiveUrl": "https://archive.org/details/segasms_F-16_Fighting_Falcon_1985_ASCII_-_Sega_JP_en",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63043/50671014229048.jpg?sequence=1&isAllowed=y"
+        },
+        {
+            "gameTitle": "Astroblast",
+            "releaseDate": "1982",
+            "gameSystem": "Atari 2600",
+            "internetArchiveUrl": "https://archive.org/details/atari_2600_astroblast",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63231/50671014129446.jpg?sequence=1&isAllowed=y"
+        },
+        {
+            "gameTitle": "Porky's",
+            "releaseDate": "1983",
+            "gameSystem": "Atari 2600",
+            "internetArchiveUrl": "https://archive.org/details/atari_2600_porkys_1983_20th_century_fox_video_games_-_lazer_micro_systems_-_dunhi",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63335/50671014228388.JPG?sequence=1&isAllowed=y"
+        },
+        {
+            "gameTitle": "Fantasy Zone",
+            "releaseDate": "1986",
+            "gameSystem": "Sega Master System",
+            "internetArchiveUrl": "https://archive.org/details/segasms_Fantasy_Zone_1986_Sega_JP_en",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63074/50671014229188.jpg?sequence=1&isAllowed=y"
+        },
+        {
+            "gameTitle": "Dragster",
+            "releaseDate": "1980",
+            "gameSystem": "Atari 2600",
+            "internetArchiveUrl": "https://archive.org/details/atari_2600_dragster_1980_activision_david_crane_ag-001",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63236/50671014235771.jpg?sequence=1&isAllowed=y"
+        },
+        {
+            "gameTitle": "Circus Atari",
+            "releaseDate": "1980",
+            "gameSystem": "Atari 2600",
+            "internetArchiveUrl": "https://archive.org/details/atari_2600_circus_atari_-_circus_paddle_1980_atari_mike_lorenzen_-_sears_cx2630_-",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63273/50671014236118.jpg?sequence=1&isAllowed=y"
+        },
+        {
+            "gameTitle": "Enduro",
+            "releaseDate": "1983",
+            "gameSystem": "Atari 2600",
+            "internetArchiveUrl": "https://archive.org/details/atari_2600_enduro_1983_activision_larry_miller_ax-026_ax-026-04",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63276/50671014236134.jpg?sequence=1&isAllowed=y"
         },
         {
             "gameTitle": "Zaxxon 3-D",
@@ -71,11 +218,102 @@
             "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63082/50671014229030.jpg?sequence=1&isAllowed=y"
         },
         {
-            "gameTitle": "Fantasy Zone",
+            "gameTitle": "Pitfall 2: Lost Caverns",
+            "releaseDate": "1984",
+            "gameSystem": "Atari 2600",
+            "internetArchiveUrl": "https://archive.org/details/atari_2600_pitfall_ii_-_lost_caverns_1983_activision_david_crane_ab-035-04",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63283/50671014236209.JPG?sequence=1&isAllowed=y"
+        },
+        {
+            "gameTitle": "Great Baseball",
+            "releaseDate": "1987",
+            "gameSystem": "Sega Master System",
+            "internetArchiveUrl": "https://archive.org/details/segasms_Great_Baseball_1987_Sega",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63034/50671014229238.jpg?sequence=1&isAllowed=y"
+        },
+        {
+            "gameTitle": "Empire Strikes Back",
+            "releaseDate": "1982",
+            "gameSystem": "Atari 2600",
+            "internetArchiveUrl": "https://archive.org/details/atari_2600_star_wars_-_the_empire_strikes_back_1982_parker_brothers_rex_bradford_",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63276/50671014236134.jpg?sequence=1&isAllowed=y"
+        },
+        {
+            "gameTitle": "Maze Hunter 3-D",
+            "releaseDate": "1987",
+            "gameSystem": "Sega Master System",
+            "internetArchiveUrl": "https://archive.org/details/segasms_Maze_Hunter_3D_1987_Sega",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63078/50671014229105.jpg?sequence=1&isAllowed=y"
+        },
+        {
+            "gameTitle": "Laser Blast",
+            "releaseDate": "1981",
+            "gameSystem": "Atari 2600",
+            "internetArchiveUrl": "https://archive.org/details/atari_2600_laser_blast_lazer_1981_activision_david_crane_ag-008",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63341/50671014228438.JPG?sequence=1&isAllowed=y"
+        },
+        {
+            "gameTitle": "Demon Attack",
+            "releaseDate": "1982",
+            "gameSystem": "Atari 2600",
+            "internetArchiveUrl": "https://archive.org/details/atari_2600_demon_attack_1983_cce_c-823",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63404/50671014247404.JPG?sequence=1&isAllowed=y"
+        },
+        {
+            "gameTitle": "Stampede",
+            "releaseDate": "1981",
+            "gameSystem": "Atari 2600",
+            "internetArchiveUrl": "https://archive.org/details/atari_2600_stampede_1981_activision_bob_whitehead_ag-011",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63331/50671014228347.JPG?sequence=1&isAllowed=y"
+        },
+        {
+            "gameTitle": "Fantasy Zone: The Maze",
+            "releaseDate": "1987",
+            "gameSystem": "Sega Master System",
+            "internetArchiveUrl": "https://archive.org/details/segasms_Fantasy_Zone_-_The_Maze_1987_Sega",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63033/50671014229204.jpg?sequence=1&isAllowed=y"
+        },
+        {
+            "gameTitle": "Pitfall",
+            "releaseDate": "1982",
+            "gameSystem": "Atari 2600",
+            "internetArchiveUrl": "https://archive.org/details/atari_2600_pitfall_1983_cce_c-813",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63282/50671014236191.JPG?sequence=1&isAllowed=y"
+        },
+        {
+            "gameTitle": "Sonic the Hedgehog 2",
+            "releaseDate": "1992",
+            "gameSystem": "Sega Genesis",
+            "internetArchiveUrl": "https://archive.org/details/sg_Sonic_the_Hedgehog_2_Rev_2_1992_Sega",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63092/50671014229022.jpg?sequence=1&isAllowed=y"
+        },
+        {
+            "gameTitle": "Out Run",
+            "releaseDate": "1987",
+            "gameSystem": "Sega Master System",
+            "internetArchiveUrl": "https://archive.org/details/segasms_Out_Run_1987_Sega",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63037/50671014229121.jpg?sequence=1&isAllowed=y"
+        },
+        {
+            "gameTitle": "Sky Skipper",
+            "releaseDate": "1981",
+            "gameSystem": "Atari 2600",
+            "internetArchiveUrl": "https://archive.org/details/atari_2600_sky_skipper_1983_parker_brothers_pb5350",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63333/50671014228362.JPG?sequence=1&isAllowed=y"
+        },
+        {
+            "gameTitle": "Street Racer",
+            "releaseDate": "1977",
+            "gameSystem": "Atari 2600",
+            "internetArchiveUrl": "https://archive.org/details/atari_2600_street_racer_-_speedway_ii_wheels_paddle_1977_atari_larry_kaplan_-_sea",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63328/50671014228313.JPG?sequence=1&isAllowed=y"
+        },
+        {
+            "gameTitle": "TransBot",
             "releaseDate": "1986",
             "gameSystem": "Sega Master System",
-            "internetArchiveUrl": "https://archive.org/details/segasms_Fantasy_Zone_1986_Sega_JP_en",
-            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63074/50671014229188.jpg?sequence=1&isAllowed=y"
+            "internetArchiveUrl": "https://archive.org/details/segasms_Transbot_1986_Sega",
+            "smartechUrl": "https://smartech.gatech.edu/bitstream/handle/1853/63040/50671014229071.jpg?sequence=1&isAllowed=y"
         }
     ]
 }
