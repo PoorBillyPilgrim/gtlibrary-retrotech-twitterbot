@@ -9,7 +9,7 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT;
 
-/** Intermediate certificates for smartech.library.gatech.edu
+/** Intermediate certificates for smartech.gatech.edu
  *  were not bundled in the certificate chain,
  *  so I downloaded them and manually bundled them using the ssl-root-cas module
  *  Docs: https://www.npmjs.com/package/ssl-root-cas
